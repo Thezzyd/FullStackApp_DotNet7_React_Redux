@@ -25,5 +25,11 @@ namespace API.Controllers
             return await _context.Products.FindAsync(id);
         }
 
+        
+       /* [HttpPost()]
+        public async Task<ActionResult<Product>> GetProduct(Product newProduct){
+            return await _context.Products.AddAsync(newProduct);
+        }*/
+
     }
 }
