@@ -4,6 +4,9 @@ import {useParams} from "react-router-dom";
 import { Product } from "../../app/models/products";
 import axios from "axios";
 import { error } from "console";
+import agent from "../../app/api/agent";
+import NotFoundError from "../../app/errors/NotFoundError";
+import LoadingComponent from "../../app/layout/LoadingComponent";
 
 export default function ProductDetails(){
     const {id} = useParams<{id: string}>();
@@ -11,14 +14,14 @@ export default function ProductDetails(){
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/products/${id}`)
-        .then(response => setProduct(response.data))
+        id && agent.Catalog.details(parseInt(id))
+        .then(response => setProduct(response))
         .catch(error => console.log(error))
         .finally(() => setLoading(false));
     }, [id])
 
-    if(loading) return <h3>Loading...</h3>
-    if(!products) return <h3>Product not found</h3>
+    if(loading) return <LoadingComponent message='Loading product...' />
+    if(!products) return <NotFoundError />
 
     return(
        <Grid container spacing={6}>
