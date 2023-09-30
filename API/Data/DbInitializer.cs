@@ -8,8 +8,8 @@ namespace API.Data.Migrations
         public static async Task Initialize(StoreContext context, UserManager<User> userManager){
             if(!userManager.Users.Any()){
                 var user = new User{
-                    UserName = "bobbb",
-                    Email = "bhjbhbh@tit@com"
+                    UserName = "bob",
+                    Email = "bob@test.com"
                 };
                 
                 await userManager.CreateAsync(user, "Pa$$w0rd");
@@ -17,7 +17,7 @@ namespace API.Data.Migrations
 
                 var admin = new User{
                     UserName = "admin",
-                    Email= "adminoo.gtg@com"
+                    Email = "admin@test.com"
                 };
 
                 await userManager.CreateAsync(admin, "Pa$$w0rd");
@@ -227,11 +227,14 @@ namespace API.Data.Migrations
                 },
             };
 
-            context.Products.AddRange(products);
-            context.SaveChanges();
-            /*foreach(Product product in products){
+            //context.Products.AddRange(products);
+            
+            foreach(Product product in products){
                 context.Products.Add(product);
-            }*/
+            }
+            
+            context.SaveChanges();
+            
         }
     }
 }
