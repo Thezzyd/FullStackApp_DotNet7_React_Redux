@@ -16,7 +16,6 @@ export default function OrderDetails({order, setSelectedOrder}: Props) {
     const subtotal = order.orderItems.reduce((sum, item) => sum+item.price*item.quantity ,0) ?? 0;
     return (
         <>
-
             <Box display='flex' justifyContent='space-between'>
                 <Typography sx={{p:2}} gutterBottom variant='h4'>Order# {order.id} - {order.orderStatus} </Typography>
                 <Button onClick={() => setSelectedOrder(0)} sx={{m:2}} size='large' variant='contained' >Back to orders </Button>
