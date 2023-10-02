@@ -1,17 +1,11 @@
 import { Divider, Grid, Table, TableBody, TableCell, TableContainer, TableRow, TextField, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import {useParams} from "react-router-dom";
-import { Product } from "../../app/models/products";
-import axios from "axios";
-import { error } from "console";
-import agent from "../../app/api/agent";
 import NotFoundError from "../../app/errors/NotFoundError";
 import LoadingComponent from "../../app/layout/LoadingComponent";
-import { StoreContext, useStoreContext } from "../../app/context/StoreContext";
 import { LoadingButton } from "@mui/lab";
 import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
-import { useDispatch } from "react-redux";
-import { addBasketItemAsync, removeBasketItemAsync, setBasket } from "../basket/basketSlice";
+import { addBasketItemAsync, removeBasketItemAsync } from "../basket/basketSlice";
 import { fetchProductAsync, productSelectors } from "./catalogSlice";
 
 export default function ProductDetails(){
@@ -93,7 +87,7 @@ export default function ProductDetails(){
                     </Grid>
                     <Grid item xs={6}>
                         <LoadingButton
-                            disabled={item?.quantity === quantity || !item && quantity === 0}
+                            disabled={item?.quantity === quantity || (!item && quantity === 0)}
                             loading={status.includes('pending')}
                             onClick={handleUpdateCart}
                             sx={{height: '55px'}}

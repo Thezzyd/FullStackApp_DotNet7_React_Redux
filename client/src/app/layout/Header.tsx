@@ -1,7 +1,6 @@
 import { ShoppingCart } from "@mui/icons-material";
 import {AppBar, Toolbar, Typography, Switch, ListItem, List, IconButton, Badge, Box} from "@mui/material";
 import {NavLink, Link} from "react-router-dom";
-import { useStoreContext } from "../context/StoreContext";
 import { useAppSelector } from "../store/configureStore";
 import SignedInMenu from "./SignedInMenu";
 
@@ -36,7 +35,7 @@ export default function Header({darkMode, handleThemeChange} : Props){
 
     return(
         
-        <AppBar position = "static" sx={{mb: 4}}>
+        <AppBar position = "static">
             <Toolbar sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                 <Box display='flex' alignItems='center'>
                     <Typography variant="h6"

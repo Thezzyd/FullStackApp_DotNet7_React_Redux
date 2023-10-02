@@ -1,9 +1,9 @@
 import { createAsyncThunk, createSlice, isAnyOf } from "@reduxjs/toolkit";
 import { User } from "../../app/models/user";
-import { Field, FieldValue, FieldValues } from "react-hook-form";
+import { FieldValues } from "react-hook-form";
 import agent from "../../app/api/agent";
 import { router } from "../../app/router/Routes";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { setBasket } from "../basket/basketSlice";
 
 

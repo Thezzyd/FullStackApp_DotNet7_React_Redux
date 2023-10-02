@@ -4,7 +4,6 @@ import agent from "../../app/api/agent";
 import LoadingComponent from "../../app/layout/LoadingComponent";
 import {Order} from "../../app/models/order"
 import { currencyFormat } from "../../app/util/util";
-import BasketSummary from "../basket/BasketSummary";
 import OrderDetails from "./OrderDetails";
 
 export default function Orders(){

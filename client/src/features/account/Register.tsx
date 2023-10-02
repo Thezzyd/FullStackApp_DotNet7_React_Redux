@@ -1,21 +1,15 @@
-import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { Alert, AlertTitle, List, ListItem, ListItemText, Paper } from '@mui/material';
+import { Paper } from '@mui/material';
 import {Link, useNavigate} from "react-router-dom";
-import {useForm, FieldValues} from "react-hook-form";
-import { useState } from 'react';
+import {useForm} from "react-hook-form";
 import agent from '../../app/api/agent';
 import { LoadingButton } from '@mui/lab';
-import { error } from 'console';
-import { useAppDispatch } from '../../app/store/configureStore';
-import { signInUser } from './accountSlice';
 import { toast } from 'react-toastify';
 
 export default function Register() {
