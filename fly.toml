@@ -12,6 +12,9 @@ primary_region = "waw"
 [env]
   ASPNETCORE_URLS="http://+:8080"
   StripeSettings__PublishableKey="pk_test_51NwMBzFdEeNUxE0gCgMQJOdohrrkNCrcYTA4m3gkV6DabXXNuXXAbexxgyDdJ2ppZXdKzoKLL8LVnDSg4BvIcMYf00e8LCA16m"
+  Cloudinary__CloudName="dg7dft8jc"
+  Cloudinary__ApiKey="382614967373867"
+
 
 [http_service]
   internal_port = 8080
