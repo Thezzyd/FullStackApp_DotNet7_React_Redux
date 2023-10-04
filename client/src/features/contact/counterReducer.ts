@@ -8,7 +8,7 @@ export interface CounterState {
 
 const initialState: CounterState = {
     data: 42,
-    title: 'yep kok'
+    title: 'Test Redux'
 }
 
 export function increment(amount = 1){

@@ -7,7 +7,7 @@ export interface CounterState {
 
 const initialState: CounterState = {
     data: 42,
-    title: 'yep kok 2'
+    title: 'Test Redux'
 }
 
 export const counterSlice = createSlice({
